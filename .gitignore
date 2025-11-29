@@ -34,3 +34,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ides
+/.idea
+/.vscode
+.vscode/
+*.code-workspace
+
+# cursor
+.cursor/
+.cursorrules
+
+# misc
+/.eslintcache
+
+# tests
+/vitest-test-results

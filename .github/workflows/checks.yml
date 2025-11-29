@@ -1,0 +1,38 @@
+name: Checks
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: yarn
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Format checker
+        run: yarn format:check
+
+      - name: Type check
+        run: yarn typecheck
+
+      - name: Lint check
+        run: yarn lint
+
+      - name: Install browsers
+        run: yarn test:browser:install
+
+      - name: Run Vitest tests
+        run: yarn test
+
+      - name: Run Vitest Browser Mode Tests
+        run: yarn test:browser
