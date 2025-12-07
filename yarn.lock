@@ -1351,7 +1351,7 @@
     "@vitest/mocker" "4.0.14"
     tinyrainbow "^3.0.3"
 
-"@vitest/browser@4.0.14", "@vitest/browser@^4.0.13":
+"@vitest/browser@4.0.14":
   version "4.0.14"
   resolved "https://registry.yarnpkg.com/@vitest/browser/-/browser-4.0.14.tgz#12b577e027ff09cbcc3c9395f44ae7df73543b3b"
   integrity sha512-vO0uqR8SnPTd8ykp14yaIuUyMZ9HEBYuoZrVdUp7RrEp76VEnkrX9fDkGnK0NyBdfWXB6cqp7BmqVekd8yKHFQ==
