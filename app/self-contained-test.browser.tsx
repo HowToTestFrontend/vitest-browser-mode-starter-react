@@ -24,12 +24,12 @@ const CounterComponent = (): React.ReactElement => {
 it('should let you increment ', async () => {
   render(<CounterComponent />);
 
-  // everything is promise based:
-  await expect.element(page.getByRole('heading')).toHaveTextContent('Count: 0');
+  expect(page.getByRole('heading')).toHaveTextContent('Count: 0');
 
   // get an element, then call .click() on it directly:
-  const button = await page.getByRole('button');
+  const button = page.getByRole('button');
   await button.click();
 
-  await expect.element(page.getByRole('heading')).toHaveTextContent('Count: 1');
+  expect(page.getByRole('heading')).toHaveTextContent('Count: 1');
+  // await expect.element(page.getByRole('heading')).toHaveTextContent('Count: 1');
 });
