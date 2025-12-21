@@ -11,10 +11,10 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,json,js,cjs,mjs,css,html,mdx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json,js,cjs,mjs,css,html,mdx}\"",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
+    "test": "vitest --project unit",
     "test:browser:install": "yarn playwright install --with-deps",
-    "test:browser": "yarn vitest --browser --config=vitest.browser.config.ts",
-    "test:browser:ui": "yarn vitest --browser --config=vitest.browser.config.ts --ui"
+    "test:browser": "yarn vitest --browser --project browser",
+    "test:browser:ui": "yarn vitest --browser --project browser --ui"
   },
   "dependencies": {
     "next": "16.0.5",
